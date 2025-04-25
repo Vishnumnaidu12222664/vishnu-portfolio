@@ -601,11 +601,28 @@ header .navbar ul li a:hover::after {
   margin-top: 2rem;
 }
 .skills .container .row {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1.8rem;
+  gap: 2rem;
 }
+
+/* Individual Skill Categories */
+.skills-category {
+  flex: 1;
+  min-width: 250px;  /* Ensures the categories are responsive */
+  max-width: 350px;
+}
+
+.skills-category h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f3f3f3;
+}
+
+/* Bar Styling */
 .skills .container .bar {
   margin-bottom: 15px;
   padding: 10px;
@@ -618,6 +635,8 @@ header .navbar ul li a:hover::after {
   box-shadow: 0 8px 10px rgba(0, 2, 68, 0.8) !important;
   background-color: rgba(0, 0, 0, 0.9) !important;
 }
+
+/* Info Styling */
 .skills .container .bar .info {
   display: flex;
   flex-direction: column;
@@ -625,34 +644,38 @@ header .navbar ul li a:hover::after {
   gap: 1rem;
   margin-top: 1rem;
 }
+.skills .container .bar .info img,
 .skills .container .bar .info i {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .skills .container .bar .info span {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   font-family: "Poppins";
   margin-left: 0.5rem;
 }
-/* skills media queries starts*/
+
+/* skills media queries starts */
 @media screen and (max-width: 600px) {
   .skills .container {
     padding: 0;
     margin: 0;
   }
   .skills .container .row {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;  /* Aligns categories vertically */
     margin: 1rem;
-    padding: 2rem 0.2rem 2rem 0.2rem;
-    gap: 1rem;
+    padding: 2rem 0.2rem;
+    gap: 1.5rem;
   }
-  .skills .container {
-    margin-top: 5px;
-    width: 100%;
+  .skills-category {
+    max-width: 100%;
+    flex: 1;
+  }
+  .skills .container .bar .info {
+    flex-direction: row;  /* Display icon and text side by side */
   }
 }
-/* skills media queries ends*/
-/* skills section ends */
+
 
 /* education section starts */
 .education {
@@ -1052,6 +1075,68 @@ header .navbar ul li a:hover::after {
 }
 /* experience media queries ends */
 /* experience section ends */
+
+/* training section starts */
+.training {
+  background: #f8f9fa;
+  padding: 5rem 9%;
+  min-height: 80vh;
+}
+
+.training .heading {
+  font-size: 3.5rem;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.training .subheading {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--gray);
+  margin-bottom: 3rem;
+}
+
+.training .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.training .box {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.training .box:hover {
+  transform: translateY(-10px);
+}
+
+.training .box h3 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.training .box p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.training .certificate-img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+/* training section ends */
+
 
 /* contact section starts */
 .contact {
